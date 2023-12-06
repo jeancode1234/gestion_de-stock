@@ -25,14 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()){
-            return redirect()->route('dashboard');
+          return view('home');
         }
 
         return redirect()->route('login');
     }
 
-    public function dashboard(){
-
-        return view('home');
-    }
+    
 }

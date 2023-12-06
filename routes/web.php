@@ -15,8 +15,8 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/',[\App\Http\Controllers\HomeController::class,'index']);
+
 Auth::routes();
 
-
+Route::get('/',[\App\Http\Controllers\HomeController::class,'index']);
 Route::get('/dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');

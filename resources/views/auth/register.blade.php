@@ -15,16 +15,28 @@
                 </div>
                 <div class="card-body ">
                   <div class="form-group bmd-form-group">
+                    <label for="exampleEmail" class="bmd-label-floating"> Nom *</label>
+                    <input type="text" name="nom" class="form-control" id="exampleEmail" required="true" aria-required="true">
+                  </div>
+                  <div class="form-group bmd-form-group">
+                    <label for="exampleEmail" class="bmd-label-floating">  Address *</label>
+                    <input type="text" name="adresse"  class="form-control" id="exampleEmail" required="true" aria-required="true">
+                  </div>
+                  <div class="form-group bmd-form-group">
+                    <label for="exampleEmail" class="bmd-label-floating"> Phone Number *</label>
+                    <input type="text" name="telephone" class="form-control" id="exampleEmail" required="true" aria-required="true">
+                  </div>
+                  <div class="form-group bmd-form-group">
                     <label for="exampleEmail" class="bmd-label-floating"> Email Address *</label>
-                    <input type="email" class="form-control" id="exampleEmail" required="true" aria-required="true">
+                    <input type="email" name="email" class="form-control" id="exampleEmail" required="true" aria-required="true">
                   </div>
                   <div class="form-group bmd-form-group">
                     <label for="examplePassword" class="bmd-label-floating"> Password *</label>
-                    <input type="password" class="form-control" id="examplePassword" required="true" name="password" aria-required="true">
+                    <input type="password" name="password" class="form-control" id="examplePassword" required="true" name="password" aria-required="true">
                   </div>
                   <div class="form-group bmd-form-group">
                     <label for="examplePassword1" class="bmd-label-floating"> Confirm Password *</label>
-                    <input type="password" class="form-control" id="examplePassword1" required="true" equalto="#examplePassword" name="password_confirmation" aria-required="true">
+                    <input type="password" name="password_confirmation" class="form-control" id="examplePassword1" required="true" equalto="#examplePassword" name="password_confirmation" aria-required="true">
                   </div>
                   <div class="category form-category">* Required fields</div>
                 </div>
