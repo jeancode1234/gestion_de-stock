@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+         $this->middleware('auth');
     }
 
     /**
@@ -24,11 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()){
-          return view('home');
-        }
-
-        return redirect()->route('login');
+        $produits = Produit::all();
+          return view('home',['produits'=>$produits]);
+        
     }
 
     

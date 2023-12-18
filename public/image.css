@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+svg{
+  width: 22px;
+  cursor: pointer;
+  color: var(--primary);
+}
+/* colors */
+
+:root{
+  --primary : #362FD9;
+  --white: #ffff;
+  --error:#B31312;
+}
+.avatar{
+    margin: 10px auto;
+    height: 100px;
+    width: 100px;
+  }
+  .avatar .flt{
+   
+    position: relative;
+    display: grid;
+  }
+  .avatar .flt input{
+    display: none;
+  }
+  
+  .avatar .flt .label-img{
+   position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(10px,10px);
+    z-index: 10;
+  }
+  .avatar .flt .label-img .icon{
+    background-color:var(--primary);
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+  
+  .avatar .flt .label-img .icon svg{
+   color: var(--white);
+  }
+  
+  .avatar .flt img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    
+  }
+  .btn{
+    background-color:var(--primary);
+  }

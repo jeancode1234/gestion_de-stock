@@ -52,6 +52,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('material-dashboard') }}/assets/css/material-dashboard.min.css?v=2.1.0" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('image.css')}}">
+    <script src="{{asset('picture.js')}}" defer></script>
 </head>
 
 <body class="">
@@ -83,20 +85,83 @@
                     <div class="user-info">
                         <a href="" class="username">
                             <span>
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->nom }}
                             </span>
                         </a>
                     </div>
                 </div>
+                @if (Auth::user())
                 <ul class="nav">
-                    <li class="nav-item {{ request()->route()->uri == 'dashboard' ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('dashboard') }}">
-                            <i class="material-icons">dashboard</i>
-                            <p> Dashboard </p>
+                   
+                    @if (Auth::user()->type==1)
+                    <li class="nav-item {{ request()->route()->uri == 'categorie' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('categorie') }}">
+                            <i class="material-icons">category</i>
+                            <p> Categories </p>
                         </a>
                     </li>
+                    <li class="nav-item {{ request()->route()->uri == 'produits' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('produits.index') }}">
+                            <i class="material-icons">shop</i>
+                            <p> Produits </p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->route()->uri == 'commandes' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('commandes') }}">
+                            <i class="material-icons">store</i>
+                            <p> Toutes les Commandes </p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->route()->uri == 'ventes' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('ventes') }}">
+                            <i class="material-icons">store</i>
+                            <p>Toutes les ventes</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->route()->uri == 'clients' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('clients') }}">
+                            <i class="material-icons">people</i>
+                            <p>Clients</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->route()->uri == 'fournisseurs' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('fournisseurs.index') }}">
+                            <i class="material-icons">store</i>
+                            <p> Mes Fournisseurs</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->route()->uri == 'entrers' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('entrers.index') }}">
+                            <i class="material-icons">store</i>
+                            <p> Mes achats</p>
+                        </a>
+                    </li>
+                    @else
+                    <li class="nav-item {{ request()->route()->uri == 'home' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('home') }}">
+                            <i class="material-icons">home</i>
+                            <p> Accueil </p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->route()->uri == 'commande' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('commande.mescommandes') }}">
+                            <i class="material-icons">store</i>
+                            <p> Mes Commandes </p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->route()->uri == 'vente.mesachats' ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('vente.mesachats') }}">
+                            <i class="material-icons">store</i>
+                            <p> Mes Achats </p>
+                        </a>
+                    </li>
+                 
+                    @endif
                    
+                    
                 </ul>
+                @endif
+               
             </div>
         </div>
         <div class="main-panel">
@@ -532,6 +597,13 @@
 
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <script>
+        $(document).ready(function() {
+          // Initialise Sweet Alert library
+          demo.showSwal();
+        });
+      </script>
 </body>
 
 </html>
